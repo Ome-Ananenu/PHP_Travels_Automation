@@ -34,6 +34,14 @@ public class SignUpPage {
 
 //        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Thread.sleep(3000);
+        fillFormDetails(firstName,lastName,email,companyName,streetAddress,city,state,postCode,mobileNumber,password,confirmPassword);
+
+        enableSubmitBtn();
+    }
+
+    public void fillFormDetails(String firstName, String lastName, String email, String companyName, String streetAddress,
+                                 String city, String state, String postCode, String mobileNumber, String password, String confirmPassword) throws InterruptedException {
+
         driver.findElementById(firstNameId).sendKeys(firstName);
         driver.findElementById(lastNameId).sendKeys(lastName);
         driver.findElementById(emailId).sendKeys(email);
@@ -46,7 +54,6 @@ public class SignUpPage {
         driver.findElementById(passwordId).sendKeys(password);
         driver.findElementById(confirmPasswordId).sendKeys(confirmPassword);
 
-        enableSubmitBtn();
     }
 
     private void enableSubmitBtn() throws InterruptedException {
@@ -55,7 +62,7 @@ public class SignUpPage {
         Object enableSubmitBtn = js.executeScript("document.querySelector('#login').disabled = false");
 
         Thread.sleep(3000);
-        WebElement signUpBtn = driver.findElementById(signUpBtnId);
+        WebElement signUpBtn = driver.findElementById(registerBtnId);
         signUpBtn.click();
     }
     private void visitSignUpPage() {
