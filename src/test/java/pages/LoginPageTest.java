@@ -5,8 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class LoginPageTest {
     private ChromeDriver driver;
     private LoginPage loginPage;
@@ -24,7 +22,7 @@ class LoginPageTest {
     @Test
     public void whenRequestToLoginPage_ShouldPass() throws InterruptedException {
         loginPage = new LoginPage(driver);
-        loginPage.visiLoginPage("lisa@gmail.com","1234");
+        loginPage.visitLoginPage("lisa@gmail.com","1234");
 
 //        assertEquals(docsPage.getSuccessMessage(),"Thank you!");
     }

@@ -17,7 +17,7 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    public void visiLoginPage(String email, String password){
+    public void visitLoginPage(String email, String password){
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         WebElement loginBtn = driver.findElementByXPath(loginPageBtnId);
         loginBtn.click();
